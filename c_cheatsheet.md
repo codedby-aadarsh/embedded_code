@@ -48,3 +48,41 @@ unsigned float*
 unsigned double*
 
 ```
+```c
+uint32_t *pAddress = (uint32_t*) 0xFFFF0000;
+```
+> in above code you do the type cast as cause the address is the fixed number and itis treated as int and then if you try to assign a int data type to the the pointer data type, there is going to be a mismatch issue so you do the appropiate type cast.
+
+## operators in c 
+![alt text](operators.png)
+
+---
+- `x++` vs `++x`; so both are incremnt operators and are unary in nature, can  be used before the expression and after it, so the former one is the post increment, in which the increment is done after evaluation of the expression. like `c = x++;` in this c will get the value x but not x+1, while if we have written above expression like `c =++x;` then the x will first get incremented then used ,so here the c will get x+1 value.
+
+- we have the operator `&` which is the bitwise and operators and , this operator is used for the testing of the bits and we use the bitmasking concept to preserve the nth bit , and can also clear the bit at any position.
+```
+number = 7       → 00000111
+1                → 00000001
+----------------------------
+number & 1       → 00000001 (True → Odd)
+
+number = 6       → 00000110
+1                → 00000001
+----------------------------
+number & 1       → 00000000 (False → Even)
+```
+- & and | is used to play with the bit, like the and operator is used to test and clear a bit and or is used to set a particular bit and to toggle a bit , that is to invert a particular bit just ^ with 1 it will toggle the state of the bit, that is 1 becomes 0 and 0 becomes 1.
+
+
+---
+## Tips for the embedded C 
+- make use of the stdint library and the exact length of the data type needed like the unsigned 8 bit int sizes, as on why we do that due to each machine kind of have int of different bytes namely the data types based on the architecture, but when we are specific then it works fine, due to we define exactly how much size we want and it helps in get rid of the portablity issue , that is differnt architecture defines differnt data type of size.
+- the thing with the pointer is whenever you define any data type pointer ,C assigns the 8 byte to any type of the pointer, then you may ask whats the role of the data type defined when we declare a pointer data type, well the data type we define affects the read , write , increment and decrement of  the pointer. like when you increment a pointer like then it increase by the offset, and then offset is decided by the data type size of the pointer, so when you increment a pointer of type int then it has got the offset of the 4 bytes and it increase by 4 , when you increment it.
+- uintmax_t : defines the largest fixed-width unsigned integer
+possible on the system
+
+- intmax_t : defines the largest fixed-width signed integer possible
+on the system
+
+- uintptr_t : defines a unsigned integer type that is wide enough to
+store the value of a pointer.
