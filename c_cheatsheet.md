@@ -72,8 +72,34 @@ number = 6       → 00000110
 number & 1       → 00000000 (False → Even)
 ```
 - & and | is used to play with the bit, like the and operator is used to test and clear a bit and or is used to set a particular bit and to toggle a bit , that is to invert a particular bit just ^ with 1 it will toggle the state of the bit, that is 1 becomes 0 and 0 becomes 1.
+- for each `<<` left shift opearations the value get double , like if we left shift a value by 1 it gets multiply by 2 and for n shift it will get multiply by 2n and `>>` for each right shift the value get half the original.
 
 
+## Decision statement in c 
+- we already know the if else and if else if else if else ladder and you can put multiple statements inside the block.
+- switch case statements in c, in which we pass the switch(variable). then the variable get compared with different case value and which ever fits it execute its statements and you can insert break; and continue in it and also can include the default case , if none of the case matches then the default executes.
+- ternarty operator expression?true_expre:false_express;
+
+## loops in c 
+- we have for , while and do while loops , no need to explain what they are as they are common among all languages and follows slighlty differnt syntax.
+```c
+while(expresssion){
+    //statements;
+    //increment/decrement
+}
+
+for(int i =0 ;expresssion;counter){
+    //code
+}
+do{
+    //statements
+}while(condition)
+
+```
+## delays in c 
+- so there are two kind of delays in c, software delays and hardware delays.
+- software delays - this delays are produced using the loops 
+- hardware delays - this delays are produced using the hardware timers and counters.
 ---
 ## Tips for the embedded C 
 - make use of the stdint library and the exact length of the data type needed like the unsigned 8 bit int sizes, as on why we do that due to each machine kind of have int of different bytes namely the data types based on the architecture, but when we are specific then it works fine, due to we define exactly how much size we want and it helps in get rid of the portablity issue , that is differnt architecture defines differnt data type of size.
